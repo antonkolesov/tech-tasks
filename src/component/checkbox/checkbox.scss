@@ -1,0 +1,7 @@
+.checkbox > .choice__label:before {
+  content: "\F130";
+}
+
+.checkbox > .choice__input:checked + .choice__label:before {
+  content: "\F133";
+}

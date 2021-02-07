@@ -1,0 +1,62 @@
+.menu,
+.menu--orientation-vertical {
+  display: flex;
+  flex-direction: column;
+
+  .menu__item {
+    margin: -1px 0 0 0;
+    text-align: left;
+
+    &:first-child {
+      margin: 0 0 0 0;
+    }
+  }
+}
+
+.menu--disabled {
+  opacity: 0.65;
+  pointer-events: none;
+
+  .menu {
+    opacity: 1.0;
+  }
+}
+
+.menu--orientation-horizontal {
+  flex-direction: row;
+
+  .menu__item {
+    margin: 0 0 0 -1px;
+
+    &:first-child {
+      margin: 0 0 0 0;
+    }
+  }
+}
+
+.menu__submenu {
+
+  .menu__item {
+    margin: 0;
+    border: none;
+    background: $light;
+    padding: 5px 14px 5px 8px;
+
+    &:hover {
+      background: darken($light, 4%);
+    }
+
+    &:active {
+      background: darken($light, 8%);
+    }
+  }
+}
+
+.menu__separator {
+  flex: 1 1 auto;
+}
+
+.menu__divider {
+  border-top: 1px solid darken($light, 10%);
+  margin: 5px;
+}

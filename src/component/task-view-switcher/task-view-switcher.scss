@@ -1,0 +1,22 @@
+.task-view-switcher {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  border: solid darken($light, 10%);
+  border-width: 0 1px;
+}
+
+.task-view-switcher__empty,
+.task-view-switcher__loading-overlay,
+.task-view-switcher__task-list-view,
+.task-view-switcher__task-grid-view,
+.task-view-switcher__task-column-view,
+.task-view-switcher__task-month-view,
+.task-view-switcher__task-year-view,
+.task-view-switcher__not-found-overlay {
+  flex: 1 1 auto;
+}
+
+.task-view-switcher__date-pagination {
+  flex: 0 0 auto;
+}

@@ -1,0 +1,52 @@
+.text-field {
+  align-items: center;
+  display: inline-flex;
+  flex-direction: row;
+}
+
+.text-field--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.text-field__input {
+  border: 1px solid darken($light, 30%);
+  height: 32px;
+  line-height: 1.6;
+  padding: 5px 6px;
+  resize: none;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+    border-color: $blue;
+  }
+}
+
+.text-field__input--multiline {
+  height: auto;
+}
+
+.text-field__input--error {
+  border-color: $red !important;
+}
+
+.text-field__error {
+  color: $red;
+  margin-left: 5px;
+}
+
+.text-field__tooltip {
+  background: $red;
+  color: $light;
+  line-height: 1.8;
+  padding: 4px 10px;
+}
+
+.theme {
+  @each $i, $j in $themes {
+    &--#{$i} .text-field__input:focus {
+      border-color: $j;
+    }
+  }
+}

@@ -1,0 +1,154 @@
+.popup {
+  background: #ffffff;
+  box-shadow: rgba($dark, 0.22) 0px 25.6px 57.6px 0px, rgba($dark, 0.18) 0px 4.8px 14.4px 0px;
+  display: flex;
+  flex-direction: column;
+  max-height: 90%;
+  max-width: 90%;
+  min-height: 100px;
+  min-width: 100px;
+  opacity: 0;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 120ms, opacity 120ms;
+  z-index: 2;
+}
+
+.popup--maximize {
+  height: 100%;
+  width: 100%;
+}
+
+.popup--transition-entered {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.popup--transition-exiting {
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+.popup__header {
+  align-items: center;
+  background: $blue;
+  color: $light;
+  display: flex;
+  flex: 0 0 auto;
+  font-size: 14px;
+  height: 42px;
+}
+
+.popup__title {
+  flex: 1 1 auto;
+  overflow: hidden;
+  padding: 0 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.popup__close-button {
+  color: $light;
+  cursor: pointer;
+  flex: 0 0 auto;
+  margin-right: 9px;
+  opacity: 0.9;
+
+  &:hover {
+    opacity: 1.0;
+  }
+
+  &:active {
+    opacity: 0.9;
+  }
+}
+
+.popup__body {
+  flex: 1 1 auto;
+  overflow: auto;
+}
+
+.popup__overlay {
+  align-items: center;
+  background: rgba($dark, 0.4);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.popup__overlay--transparent {
+  background: transparent;
+}
+
+.popup__resize {
+  font: normal 1.0 24px IconFont;
+  height: 24px;
+  position: absolute;
+  width: 24px;
+
+  &:before {
+    color: $light;
+    opacity: 0.4;
+  }
+
+  &:hover:before {
+    opacity: 1;
+  }
+}
+
+.popup__resize--left {
+  cursor: w-resize;
+  left: -24px;
+  top: 50%;
+  transform: translateY(-12px);
+  
+  &:before {
+    content: "\F1DD";
+  }
+}
+
+.popup__resize--right {
+  cursor: w-resize;
+  right: -24px;
+  top: 50%;
+  transform: translateY(-12px);
+
+  &:before {
+    content: "\F1DD";
+  }
+}
+
+.popup__resize--top {
+  cursor: n-resize;
+  left: 50%;
+  top: -24px;
+  transform: translateX(-12px);
+
+  &:before {
+    content: "\F1DC";
+  }
+}
+
+.popup__resize--bottom {
+  bottom: -24px;
+  cursor: n-resize;
+  left: 50%;
+  transform: translateX(-12px);
+
+  &:before {
+    content: "\F1DC";
+  }
+}
+
+.theme {
+  @each $i, $j in $themes {
+    &--#{$i} .popup__header {
+      background: $j;
+    }
+  }
+}

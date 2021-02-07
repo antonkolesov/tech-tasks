@@ -1,0 +1,98 @@
+.task-list-view {
+  background: none;
+  border: none;
+  width: 100%;
+  white-space: nowrap;
+
+  .table__table {
+    background: $light;
+  }
+
+  .table__row {
+    cursor: pointer;
+
+    &:hover {
+      background: darken($light, 1.5%);
+    }
+
+    &:active {
+      background: darken($light, 3%);
+    }
+  }
+
+  .table__cell {
+    height: 38px;
+    padding: 1px 6px 0 6px;
+
+    &:nth-child(1) {
+      width: 60px;
+    }
+
+    &:nth-child(2) {
+      font-weight: bold;
+      width: 160px;
+    }
+
+    &:nth-child(3) {
+      width: 120px;
+    }
+
+    &:nth-child(4) {
+      max-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &:nth-child(5) {
+      width: 120px;
+    }
+
+    &:nth-child(6) {
+      width: 110px;
+    }
+  }
+
+  .table__column-content {
+    height: 38px;
+  }
+
+  .table__column-text {
+    padding: 0 6px;
+  }
+
+  .table__column-dropdown {
+    height: 38px;
+  }
+}
+
+.task-list-view__checkbox-column,
+.task-list-view__checkbox-cell {
+  display: flex;
+  align-items: center;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 4px;
+    border-radius: 2px;
+    height: 25px;
+    margin: 0 5px 0 5px;
+    background: darken($light, 20%);
+  }
+}
+
+.task-list-view__checkbox {
+  margin-left: 4px;
+}
+
+.task-list-view__checkbox-cell--type {
+  @each $key, $value in (
+    create: $green,
+    update: $yellow,
+    destroy: $red
+  ) {
+    &-#{$key}:before {
+      background: $value;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.task-edit-popup {
+  min-width: 355px;
+  width: 355px;
+
+  .popup__body {
+    padding: 14px;
+  }
+}
+
+.task-edit-popup__form {
+  flex-direction: column;
+}
+
+.task-edit-popup__state-label,
+.task-edit-popup__comment-label {
+  margin-top: 14px;
+}
+
+.task-edit-popup__type-menu,
+.task-edit-popup__state-menu {
+
+  .menu__item {
+    text-align: center;
+    width: 110px;
+  }
+}
+
+.task-edit-popup__comment-field {
+  width: 100%;
+  
+  .text-field__input {
+    height: 100px;
+  }
+}
+
+.task-edit-popup__submit-button {
+  align-self: flex-end;
+  margin-top: 14px;
+  width: 100px;
+}

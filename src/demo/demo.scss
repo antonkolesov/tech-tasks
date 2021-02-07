@@ -1,0 +1,29 @@
+body {
+  background: #faf9f8;
+}
+
+.root {
+  overflow: auto;
+}
+
+.demo__header {
+  background: #0078d4;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 12px 14px;
+}
+
+.demo-item__header {
+  background: #f3f2f1;
+  padding:  8px 14px;
+}
+
+.demo-item__body {
+  padding: 7px;
+}
+
+.demo-item__container {
+  display: inline-block;
+  margin: 7px;
+  vertical-align: top;
+}

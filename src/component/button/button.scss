@@ -1,0 +1,38 @@
+.button {
+  align-items: center;
+  background: $darkBg;
+  border: 1px solid darken($darkBg, 7%);
+  cursor: pointer;
+  display: inline-flex;
+  overflow: hidden;
+  padding: 4px;
+  user-select: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: darken($darkBg, 3%);
+  }
+
+  &:active {
+    background-color: darken($darkBg, 6%);
+  }
+}
+
+.button--disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.button__icon {
+  flex: 0 0 auto;
+  pointer-events: none;
+}
+
+.button__text {
+  flex: 1 1 auto;
+  padding: 5.5px 6px;
+  pointer-events: none;
+}

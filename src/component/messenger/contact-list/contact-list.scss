@@ -1,0 +1,18 @@
+.messenger-contact-list {
+  overflow: auto;
+}
+
+.messenger-contact-list__group-header {
+  background: $darkBg;
+  border-bottom: 1px solid darken($light, 8%);
+  font-weight: bold;
+  padding: 8px;
+  position: sticky;
+  text-align: center;
+  top: 0;
+}
+
+.messenger-contact-list__not-found-overlay {
+  height: 100%;
+  width: 100%;
+}

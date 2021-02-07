@@ -1,0 +1,19 @@
+.task-sort-form {
+  display: flex;
+  flex-direction: column;
+
+  .label__text {
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+
+  .radio {
+    padding: 3px 3px;
+    margin: 0 1px;
+  }
+}
+
+.task-sort-form__sort-label,
+.task-sort-form__order-label {
+  margin-top: 14px;
+}

@@ -1,0 +1,16 @@
+.tool-popup {
+  width: 550px;
+  min-width: 450px;
+  height: 552px;
+  min-height: 200px;
+
+  .popup__body {
+    overflow: hidden;
+  }
+}
+
+.tool-popup__table {
+  width: 100%;
+  height: 100%;
+  border: none;
+}

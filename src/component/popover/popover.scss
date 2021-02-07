@@ -1,0 +1,20 @@
+.popover {
+  position: absolute;
+  background: #ffffff;
+  z-index: 2;
+  box-shadow: rgba(0, 0, 0, 0.133) 0px 3.2px 7.2px 0px, rgba(0, 0, 0, 0.11) 0px 0.6px 1.8px 0px;
+  transition: opacity 120ms, transform 120ms;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.popover--transition-entering,
+.popover--transition-entered {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.popover--transition-exiting {
+  opacity: 0;
+  transform: translateY(20px);
+}

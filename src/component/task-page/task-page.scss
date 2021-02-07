@@ -1,0 +1,28 @@
+.task-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-page__header {
+  flex: 0 0 auto;
+}
+
+.task-page__body {
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+.task-page__sidebar {
+  height: 100%;
+  width: 230px;
+}
+
+.task-page__view-switcher {
+  height: 100%;
+  width: 100%;
+}
+
+.task-page__messenger {
+  height: 100%;
+  width: 340px;
+}

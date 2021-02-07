@@ -1,0 +1,68 @@
+.table {
+  background: $light;
+  border: 1px solid darken($light, 10);
+  overflow: auto;
+}
+
+.table__table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table__column {
+  position: sticky;
+  top: 0;
+
+  &:last-child .table__column-content {
+    border-right: none;
+  }
+}
+
+.table__column-content {
+  align-items: center;
+  background: $darkBg;
+  border: solid darken($light, 10%);
+  border-width: 0 1px 1px 0;
+  display: flex;
+}
+
+.table__column-text {
+  flex: 1 1 auto;
+  padding: 0 14px;
+}
+
+.table__column-dropdown {
+  background: none;
+  border-color: darken($light, 10%);
+  border-width: 0 0 0 1px;
+  flex: 0 0 auto;
+  padding: 4px 2px;
+}
+
+.table__row {
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid darken($light, 5%);
+}
+
+.table__cell {
+  line-height: 1.8;
+  padding: 5px 14px;
+}
+
+.table__column-menu {
+
+  .menu__item {
+    background: $light;
+    border: none;
+    padding: 5px 14px 5px 7px;
+    text-align: left;
+
+    &:hover {
+      background: darken($light, 4%);;
+    }
+
+    &:active {
+      background: darken($light, 8%);
+    }
+  }
+}

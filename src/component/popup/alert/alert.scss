@@ -1,0 +1,19 @@
+.alert {
+  width: 300px;
+}
+
+.alert__body {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+}
+
+.alert__icon {
+  margin-right: 12px;
+}
+
+.alert__ok-button {
+  width: 80px;
+  margin: 0 14px 14px 0;
+  float: right;
+}

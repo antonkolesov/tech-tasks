@@ -1,0 +1,24 @@
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.data-popup__loading {
+  background: #ffffff;
+  border-radius: 100px;
+  border: 2px solid #a19f9d;
+  padding: 5px;
+
+  &:before {
+    animation: spin 1s linear 0s infinite normal;
+    font-size: 24px;
+  }
+}
+
+.data-popup__alert {
+  width: 240px;
+}

@@ -1,0 +1,59 @@
+.task-detail-popup {
+  width: 700px;
+  height: 700px;
+  min-width: 450px;
+  min-height: 410px;
+
+  .popup__body {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+}
+
+.task-detail-popup__toolbar {
+  display: flex;
+  margin: 14px;
+  flex: 0 0 auto;
+}
+
+.task-detail-popup__separator {
+  flex: 1 1 auto;
+}
+
+.task-detail-popup__comment {
+  margin: 0 14px;
+  line-height: 1.8;
+  flex: 0 0 auto;
+  border: 1px solid darken($light, 10%);
+  padding: 4px 8px;
+  max-height: 148px;
+  overflow: auto;
+}
+
+.task-detail-popup__tab-bar {
+  margin: 14px;
+  flex: 0 0 auto;
+}
+
+.task-detail-popup__attachment {
+  border: 1px solid darken($light, 10%);
+  flex: 1 1 auto;
+  margin: 0 14px 14px 14px;
+  overflow: hidden;
+}
+
+.task-detail-popup__loading-overlay,
+.task-detail-popup__not-found-overlay {
+  height: 100%;
+  width: 100%;
+}
+
+.task-detail-popup__operation-list,
+.task-detail-popup__material-table,
+.task-detail-popup__tool-table {
+  border: none;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}

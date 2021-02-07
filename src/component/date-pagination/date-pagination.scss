@@ -1,0 +1,67 @@
+.date-pagination {
+  align-items: center;
+  border-top: 1px solid darken($light, 10%);
+  display: flex;
+  justify-content: center;
+  padding: 4px;
+  position: relative;
+}
+
+.date-pagination--changing {
+  pointer-events: none;
+
+  .date-pagination__wrapper {
+    transition: transform 300ms ease-in-out;
+  }
+}
+
+.date-pagination__scroller {
+  overflow: hidden;
+}
+
+.date-pagination__wrapper {
+  display: flex;
+}
+
+.date-pagination__item,
+.date-pagination__current,
+.date-pagination__first,
+.date-pagination__last,
+.date-pagination__prev,
+.date-pagination__next {
+  background: none;
+  border-color: transparent;
+  flex: 0 0 auto;
+
+  &:hover {
+    border-color: darken($darkBg, 7%);
+  }
+}
+
+.date-pagination__frame {
+  position: absolute;
+  bottom: 0;
+  height: 5px;
+  left: 50%;
+  background: $blue;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+@each $i, $j in (
+  date: 70,
+  month: 84,
+  year: 52
+) {
+  .date-pagination__item--#{$i},
+  .date-pagination__current--#{$i},
+  .date-pagination__frame--#{$i} {
+    width: $j + px;
+  }
+}
+
+@each $i, $j in $themes {
+  .theme--#{$i} .date-pagination__frame {
+    background: $j;
+  }
+}

@@ -1,0 +1,16 @@
+.material-popup {
+  height: 586px;
+  min-height: 200px;
+  min-width: 620px;
+  width: 700px;
+
+  .popup__body {
+    overflow: hidden;
+  }
+}
+
+.material-popup__table {
+  width: 100%;
+  height: 100%;
+  border: none;
+}

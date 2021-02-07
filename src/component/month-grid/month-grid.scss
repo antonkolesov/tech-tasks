@@ -1,0 +1,13 @@
+.month-grid__header {
+  display: flex;
+}
+
+.month-grid__row {
+  display: flex;
+}
+
+.month-grid__day-name,
+.month-grid__empty-cell,
+.month-grid__cell {
+  width: percentage(1/7);
+}

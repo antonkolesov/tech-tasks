@@ -1,0 +1,41 @@
+.label {
+  display: flex;
+  flex-direction: column;
+  
+  .label__text {
+    margin: 0 0 5px 0;
+  }
+
+  .label__content {
+    align-self: stretch;
+  }
+}
+
+.label--position {
+  @each $i in (
+    left row (0 10px 0 0),
+    right row-reverse (0 0 0 10px),
+    top column (0 0 5px 0),
+    bottom column-reverse (5px 0 0 0)
+  ) {
+    &-#{nth($i, 1)} {
+      flex-direction: nth($i, 2);
+
+      .label__text {
+        margin: nth($i, 3);
+      }
+    }
+  }
+}
+
+.label--align {
+  @each $i, $j in (
+    start: flex-start,
+    center: center,
+    end: flex-end
+  ) {
+    &-#{$i} {
+      align-items: $j;
+    }
+  }
+}

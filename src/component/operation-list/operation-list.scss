@@ -1,0 +1,28 @@
+.operation-list {
+  line-height: 1.8;
+}
+
+.operation-list__line {
+  display: flex;
+  border-bottom: 1px solid #eeedeb;
+}
+
+.operation-list__line--operation {
+  position: sticky;
+  top: 0;
+  background: #f3f2f1;
+}
+
+.operation-list__mark {
+  width: 50px;
+  flex: 0 0 auto;
+  border-right: 1px solid #eeedeb;
+  padding: 4px 14px;
+  text-align: center;
+  background: #f3f2f1;
+}
+
+.operation-list__text {
+  flex: 1 1 auto;
+  padding: 4px 14px;
+}

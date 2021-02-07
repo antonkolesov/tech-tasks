@@ -1,0 +1,78 @@
+.messenger-message {
+  margin: 20px 10px;
+  line-height: 1.6;
+  display: flex;
+}
+
+.messenger-message--mode-i {
+  flex-direction: row-reverse;
+  
+  .messenger-message__avatar,
+  .messenger-message__text {
+    background-color: $light;
+  }
+
+  .messenger-message__text:before {
+    border-color: $light transparent transparent $light;
+    right: -9px;
+  }
+}
+
+.messenger-message--mode-he {
+  color: $light;
+
+  .messenger-message__avatar,
+  .messenger-message__text {
+    background-color: $blue;
+  }
+
+  .messenger-message__text:before {
+    border-color: $blue $blue transparent transparent;
+    left: -9px;
+  }
+}
+
+.messenger-message__avatar {
+  flex: 0 0 auto;
+  margin: 0 6px;
+}
+
+.messenger-message__text {
+  padding: 8px 10px;
+  margin: 0 6px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  white-space: break-spaces;
+  word-break: break-word;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: 5px solid;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+  }
+}
+
+.messenger-message__time {
+  opacity: 0.6;
+  font-size: 11px;
+  margin: 1px 0 -1px 0;
+}
+
+@each $i, $j in $themes {
+  .theme--#{$i} .messenger-message--mode-he {
+    .messenger-message__avatar,
+    .messenger-message__text {
+      background-color: $j;
+    }
+  
+    .messenger-message__text:before {
+      border-color: $j $j transparent transparent;
+    }
+  }
+}

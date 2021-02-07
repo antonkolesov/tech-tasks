@@ -1,0 +1,7 @@
+.radio > .choice__label:before {
+  content: "\F43D";
+}
+
+.radio > .choice__input:checked + .choice__label:before {
+  content: "\FEDF";
+}

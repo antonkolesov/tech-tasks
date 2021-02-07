@@ -1,0 +1,145 @@
+@mixin cell {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  user-select: none;
+
+  &:hover {
+    background: darken($light, 1.5%);
+  }
+
+  &:active {
+    background: darken($light, 3%);
+  }
+
+  &--now {
+    font-weight: bold;
+  }
+
+  &--other {
+    opacity: 0.5;
+  }
+
+  &--selected {
+    background: $blue;
+    color: $light;
+  }
+}
+
+.date-picker {
+  display: flex;
+  flex-direction: column;
+  height: 280px;
+  text-align: center;
+  width: 260px;
+}
+
+.date-picker__header {
+  align-items: center;
+  border-bottom: 1px solid darken($light, 10%);
+  display: flex;
+  flex: 0 0 auto;
+
+  .button {
+    background: darken($light, 1.5%);
+    border-width: 0;
+    margin-left: 0;
+    padding: 5px;
+
+    &:hover {
+      background: darken($light, 3%);
+    }
+
+    &:active {
+      background: darken($light, 4.5%);
+    }
+
+    &:nth-child(2) {
+      border-width: 0 1px;
+      flex: 1 1 auto;
+      text-align: center;
+    }
+  }
+}
+
+.date-picker__body {
+  flex: 1 1 auto;
+}
+
+.date-picker__date-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 6px;
+  width: 100%;
+}
+
+.date-picker__date-header {
+  display: flex;
+  flex: 0 0 auto;
+}
+
+.date-picker__date-body {
+  flex: 1 1 auto;
+}
+
+.date-picker__date-column {
+  padding: 9px 0;
+  width: percentage(1/7);
+}
+
+.date-picker__date-row {
+  display: flex;
+  height: percentage(1/6);
+}
+
+.date-picker__date-cell {
+  @include cell;
+  width: percentage(1/7);
+  flex: 0 0 auto;
+}
+
+.date-picker__month-panel {
+  display: flex;
+  height: 100%;
+  padding: 14px;
+  width: 100%;
+}
+
+.date-picker__month-column {
+  flex: 0 0 auto;
+  width: percentage(1/2);
+}
+
+.date-picker__month-cell {
+  @include cell;
+  height: percentage(1/6);
+}
+
+.date-picker__year-panel {
+  display: flex;
+  height: 100%;
+  padding: 14px;
+  width: 100%;
+}
+
+.date-picker__year-column {
+  flex: 0 0 auto;
+  width: percentage(1/4);
+}
+
+.date-picker__year-cell {
+  @include cell;
+  height: percentage(1/6);
+}
+
+@each $i, $j in $themes {
+  .theme--#{$i} {
+    .date-picker__date-cell--selected,
+    .date-picker__month-cell--selected,
+    .date-picker__year-cell--selected {
+      background: $j;
+    }
+  }
+}

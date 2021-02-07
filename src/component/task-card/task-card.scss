@@ -1,0 +1,95 @@
+.task-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 5px;
+    right: 5px;
+    border: 8px solid darken($light, 20%);
+    pointer-events: none;
+  }
+}
+
+.task-card--type {
+  @each $key, $value in (
+    create: $green,
+    update: $yellow,
+    destroy: $red
+  ) {
+    &-#{$key}:after {
+      border-color: $value $value transparent transparent;
+    }
+  }
+}
+
+.task-card__header {
+  flex: 0 0 auto;
+  font-size: 20px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+}
+
+.task-card__checkbox {
+  flex: 0 0 auto;
+  margin: 0 10px 0 -6px;
+}
+
+.task-card__title {
+  flex: 1 1 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.task-card__comment {
+  flex: 1 0 auto;
+  margin: -3px 14px;
+  line-height: 1.6;
+}
+
+.task-card__footer {
+  flex: 0 0 auto;
+  margin: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.task-card__menu {
+
+  .button {
+    margin-left: -1px;
+  }
+
+  .menu__item--state {
+    text-align: left;
+    margin-left: 0;
+    width: 124px;
+  }
+
+  .button:last-child {
+    padding: 0 2px;
+  }
+}
+
+.task-card__date {
+  margin-left: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.task-card__loading-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba($light, 0.5);
+}

@@ -1,0 +1,30 @@
+.about-popup {
+  width: 320px;
+
+  .popup__body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+  }
+}
+
+.about-popup__name {
+  font-size: 18px;
+  margin-top: 14px;
+}
+
+.about-popup__comment {
+  margin-top: 14px;
+}
+
+.about-popup__mail {
+  margin: 14px 0 18px 0;
+}
+
+@each $i, $j in $themes {
+  .theme--#{$i} .about-popup__mail {
+    color: $j;
+  }
+}

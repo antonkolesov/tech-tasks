@@ -1,0 +1,14 @@
+.viewport {
+  background: $darkBg;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.viewport__loading-overlay,
+.viewport__task-page,
+.viewport__not-found-page,
+.viewport__sign-in-page {
+  height: 100%;
+  width: 100%;
+}

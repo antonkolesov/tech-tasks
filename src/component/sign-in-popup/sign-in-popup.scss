@@ -1,0 +1,32 @@
+.sign-in-popup {
+  width: 300px;
+
+  .popup__body {
+    padding: 14px;
+  }
+}
+
+.sign-in-popup__form {
+  flex-direction: column;
+}
+
+.sign-in-popup__password-label,
+.sign-in-popup__remember-checkbox,
+.sign-in-popup__submit-button {
+  margin-top: 14px;
+}
+
+.sign-in-popup__login-field,
+.sign-in-popup__password-field {
+  width: 100%;
+}
+
+.sign-in-popup__remember-checkbox {
+  align-self: flex-start;
+  margin-left: -6px;
+}
+
+.sign-in-popup__submit-button {
+  align-self: flex-end;
+  width: 90px;
+}

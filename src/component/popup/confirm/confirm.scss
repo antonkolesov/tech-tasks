@@ -1,0 +1,30 @@
+.confirm {
+  width: 420px;
+}
+
+.confirm__body {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+}
+
+.confirm__icon {
+  margin-right: 12px;
+}
+
+.confirm__checkbox {
+  float: left;
+  margin-left: 14px;
+}
+
+.confirm__yes-button {
+  width: 80px;
+  margin: 0 14px 14px 0;
+  float: right;
+}
+
+.confirm__no-button {
+  width: 80px;
+  margin: 0 14px 14px 0;
+  float: right;
+}

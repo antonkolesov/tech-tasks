@@ -1,0 +1,29 @@
+.task-add-popup {
+  min-width: 300px;
+  width: 330px;
+}
+
+.task-add-popup__form {
+  flex-direction: column;
+  margin: 14px;
+}
+
+.task-add-popup__part-name-label,
+.task-add-popup__comment-label,
+.task-add-popup__type-label,
+.task-add-popup__created-label {
+  margin-top: 14px;
+}
+
+.task-add-popup__part-id-field,
+.task-add-popup__part-name-field,
+.task-add-popup__created-field,
+.task-add-popup__comment-field {
+  width: 100%;
+}
+
+.task-add-popup__submit-button {
+  align-self: flex-end;
+  margin-top: 14px;
+  width: 100px;
+}

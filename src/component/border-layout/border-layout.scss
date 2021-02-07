@@ -1,0 +1,35 @@
+@mixin sidebar ($name, $sign) {
+  .border-layout__#{$name} {
+    #{$name}: 0;
+    bottom: 0;
+    flex: 0 0 auto;
+    opacity: 0;
+    overflow: auto;
+    position: absolute;
+    top: 0;
+    transform-origin: #{$name} top;
+    transform: translateX(percentage($sign));
+    transition: opacity 120ms, transform 120ms;
+    z-index: 1;
+  }
+
+  .border-layout__#{$name}--transition-entering,
+  .border-layout__#{$name}--transition-entered {
+    opacity: 1;
+    position: static;
+    transform: translateX(0);
+  }
+}
+
+.border-layout {
+  display: flex;
+  position: relative;
+}
+
+.border-layout__center {
+  flex: 1 1 auto;
+  overflow: auto;
+}
+
+@include sidebar(left, -1);
+@include sidebar(right, 1);

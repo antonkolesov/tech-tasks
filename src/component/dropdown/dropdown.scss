@@ -1,0 +1,28 @@
+.dropdown {
+
+  &:after {
+    display: block;
+    font: normal 1.0 24px IconFont;
+    line-height: 1.0;
+    height: 24px;
+    margin: 0 -2px 0 -2px;
+    width: 24px;
+  }
+}
+
+.dropdown--arrow {
+  @each $i, $j in (
+    left: "\F35E",
+    right: "\F35F",
+    top: "\F360",
+    bottom: "\F35D"
+  ) {
+    &-#{$i}:after {
+      content: $j;
+    }
+  }
+}
+
+.dropdown__popover {
+  overflow: auto;
+}

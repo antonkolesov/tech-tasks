@@ -1,0 +1,68 @@
+.messenger-contact-header {
+  display: flex;
+  align-items: center;
+}
+
+.messenger-contact-header__title {
+  flex: 1 1 auto;
+  padding: 0 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.messenger-contact-header__menu {
+  flex: 0 0 auto;
+
+  .button {
+    height: 37px;
+    background: none;
+    border: none;
+
+    &:hover .icon {
+      color: $dark;
+    }
+
+    &:active .icon {
+      opacity: 0.6;
+    }
+  }
+}
+
+.messenger-contact-header__menu-group {
+  padding: 8px;
+  border: 1px solid darken($light, 8%);
+  border-width: 1px 0;
+  background: lighten($darkBg, 3%);
+
+  &:first-child {
+    border-top: none;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.messenger-contact-header__submenu {
+  
+  %sortItem {
+    font: normal 1.0 14px IconFont;
+    display: block;
+    line-height: 1.0;
+    height: 14px;
+    margin-right: -6px;
+    opacity: 0.75;
+    width: 14px;
+  }
+
+  .menu__item--asc:after {
+    @extend %sortItem;
+    content: "\F045";
+  }
+
+  .menu__item--desc:after {
+    @extend %sortItem;
+    content: "\F05D";
+  }
+}

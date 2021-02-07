@@ -1,0 +1,11 @@
+.messenger {
+  background: $darkBg;
+}
+
+.messenger__dialogue-tab,
+.messenger__contact-tab,
+.messenger__loading-overlay,
+.messenger__not-found-overlay {
+  height: 100%;
+  width: 100%;
+}

@@ -1,0 +1,22 @@
+.choice-group {
+  align-items: flex-start;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.choice-group--orientation {
+  @each $i in (
+    vertical flex-start column,
+    horizontal center row 
+  ) {
+    &-#{nth($i, 1)} {
+      align-items: nth($i, 2);
+      flex-direction: nth($i, 3);
+    }
+  }
+}
+
+.choice-group--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}

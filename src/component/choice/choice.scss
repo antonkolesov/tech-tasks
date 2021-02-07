@@ -1,0 +1,54 @@
+.choice {
+  cursor: pointer;
+  display: inline-flex;
+  overflow: hidden;
+  padding: 4px;
+  user-select: none;
+
+  &:active .choice__label:before {
+    color: darken($light, 50%) !important;
+  }
+
+  &:hover {
+    color: $dark;
+  }
+}
+
+.choice--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.choice__input {
+  display: none;
+
+  & + .choice__label:before {
+    color: darken($light, 40%);
+  }
+
+  &:checked + .choice__label:before {
+    color: $blue;
+  }
+}
+
+.choice__label {
+  align-items: center;
+  display: inline-flex;
+
+  &:before {
+    font: normal 1.0 24px IconFont;
+    line-height: 1.0;
+    height: 24px;
+    width: 24px;
+  }
+}
+
+.choice__label-text {
+  padding: 0 6px;
+}
+
+@each $i, $j in $themes {
+  .theme--#{$i} .choice__input:checked + .choice__label:before {
+    color: $j;
+  }
+}

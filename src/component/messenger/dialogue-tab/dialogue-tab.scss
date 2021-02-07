@@ -1,0 +1,18 @@
+.messenger-dialogue-tab {
+  display: flex;
+  flex-direction: column;
+}
+
+.messenger-dialogue-tab__header {
+  flex: 0 0 auto;
+}
+
+.messenger-dialogue-tab__dialogue,
+.messenger-dialogue-tab__loading-overlay,
+.messenger-dialogue-tab__not-found-overlay {
+  flex: 1 1 auto;
+}
+
+.messenger-dialogue-tab__editor {
+  flex: 0 0 auto;
+}

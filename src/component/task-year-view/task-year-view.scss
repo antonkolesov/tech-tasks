@@ -1,0 +1,140 @@
+.task-year-view {
+  background: $lightBg;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+
+  .grid__row {
+    border-top: 1px solid darken($light, 10%);
+    flex: 1 1 auto;
+
+    &:first-child {
+      border-top: none;
+    }
+  }
+
+  .grid__cell {
+    border-right: 1px solid darken($light, 10%);
+    display: flex;
+    flex-direction: column;
+
+    &:last-child > * {
+      border-right: none;
+    }
+  }
+
+  .month-grid__day-name {
+    text-align: center;
+    padding-bottom: 8px;
+    opacity: 0.7;
+    font-size: 12px;
+  }
+
+  .month-grid__empty-cell {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.task-year-view__month-header {
+  border-bottom: 1px solid darken($light, 10%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 14px;
+  position: sticky;
+  top: 0;
+  margin-bottom: -1px;
+  background: $darkBg;
+  z-index: 1;
+  cursor: pointer;
+  flex: 0 0 auto;
+
+  &:hover {
+    color: $dark;
+  }
+
+  &:active {
+    color: rgba($dark, 0.6);
+  }
+}
+
+.task-year-view__month-body {
+  flex: 1 1 auto;
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.task-year-view__date {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    font-weight: bold;
+  }
+
+  &:active {
+    color: rgba($dark, 0.6);
+  }
+}
+
+.task-year-view__dots {
+  width: 27px;
+  height: 4px;
+  background: darken($light, 3%);
+  margin: 5px 0 -2px 0;
+  position: relative;
+}
+
+.task-year-view__dot {
+  width: 9px;
+  height: 4px;
+  position: absolute;
+  top: 0;
+
+  @each $i in (
+    create 0 $green,
+    update 9 $yellow,
+    destroy 18 $red
+  ) {
+    &--#{nth($i, 1)} {
+      left: nth($i, 2) + px;
+      background: nth($i, 3);
+    }
+  }
+}
+
+.task-year-view__tooltip {
+  padding: 5px;
+}
+
+.task-year-view__tooltip-item {
+  align-items: center;
+  display: flex;
+  padding: 5px;
+}
+
+.task-year-view__tooltip-item-text {
+  flex: 1 1 auto;
+}
+
+.task-year-view__tooltip-item-value {
+  flex: 0 0 auto;
+  margin-left: 10px;
+}
+
+.task-year-view__tooltip-divider {
+  background: darken($light, 10%);
+  height: 1px;
+  margin: 5px 0;
+  width: 100%;
+}

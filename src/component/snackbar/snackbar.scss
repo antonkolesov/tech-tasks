@@ -1,0 +1,54 @@
+.snackbar {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.snackbar__item {
+  align-items: center;
+  background: $blue;
+  box-shadow: rgba(0, 0, 0, 0.133) 0px 3.2px 7.2px 0px, rgba(0, 0, 0, 0.11) 0px 0.6px 1.8px 0px;
+  color: $lightFont;
+  display: flex;
+  line-height: 1.6;
+  margin-bottom: -36px;
+  padding: 6px;
+  width: 160px;
+  transform: scaleX(0);
+  transform-origin: top center;
+  transition: margin 120ms, transform 120ms;
+}
+
+.snackbar__item--transition-entered {
+  margin-bottom: 5px;
+  transform: scaleX(1);
+}
+
+.snackbar__text {
+  flex: 1 1 auto;
+  padding: 0 6px;
+}
+
+.snackbar__close {
+  color: $lightFont;
+  flex: 0 0 auto;
+  cursor: pointer;
+  transform: scale(0.75);
+  opacity: 0.9;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:active {
+    opacity: 0.9;
+  }
+}
+
+@each $i, $j in $themes {
+  .theme--#{$i} .snackbar__item {
+    background: $j;
+  }
+}

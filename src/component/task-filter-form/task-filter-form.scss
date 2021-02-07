@@ -1,0 +1,70 @@
+.task-filter-form {
+  display: flex;
+  flex-direction: column;
+
+  .label__text {
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+
+  .checkbox {
+    padding: 3px 3px;
+    margin: 0 1px;
+  }
+}
+
+.task-filter-form__type-label,
+.task-filter-form__state-label {
+  margin-top: 14px;
+}
+
+.task-filter-form__text-container {
+  display: flex;
+  position: relative;
+}
+
+.task-filter-form__text-dropdown {
+  position: absolute;
+  padding: 4px;
+  border: none;
+  background: none;
+  left: 0;
+  top: 0;
+
+  &:hover {
+    background: none;
+    
+    .icon {
+      color: $dark;
+    }
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.task-filter-form__text-field {
+  flex: 1 1 auto;
+  
+  .text-field__input {
+    text-indent: 28px;
+  }
+}
+
+.task-filter-form__text-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+
+  .checkbox {
+    padding: 3px;
+    align-self: flex-start;
+  }
+}
+
+.task-filter-form__divider {
+  height: 0;
+  border-top: 1px solid darken($light, 10%);
+  margin: 3px 0;
+}

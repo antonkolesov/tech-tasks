@@ -1,0 +1,51 @@
+.messenger-dialogue-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid darken($light, 10%);
+}
+
+.messenger-dialogue-header__title {
+  flex: 1 1 auto;
+  padding-right: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.messenger-dialogue-header__status {
+  content: "";
+  display: block;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: $light;
+  margin: 0 10px;
+}
+
+.messenger-dialogue-header__status--active {
+  background: $blue;
+}
+
+.messenger-dialogue-header__menu {
+  flex: 0 0 auto;
+
+  .button {
+    height: 37px;
+    background: none;
+    border: none;
+
+    &:hover .icon {
+      color: $dark;
+    }
+
+    &:active .icon {
+      opacity: 0.6;
+    }
+  }
+}
+
+@each $i, $j in $themes {
+  .theme--#{$i} .messenger-dialogue-header__status--active {
+    background: $j;
+  }
+}

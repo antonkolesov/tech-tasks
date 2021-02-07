@@ -1,0 +1,74 @@
+.icon {
+  display: inline-block;
+  color: darken($light, 60%);
+
+  &:before {
+    display: block;
+    font: normal 24px/1.0 IconFont;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.icon--name {
+  &-account-circle:before {content: "\F009"}
+  &-alert-box:before {content: "\F027"}
+  &-alert-circle:before {content: "\F028"}
+  &-arrow-right:before {content: "\F054"}
+  &-bell:before {content: "\F09A"}
+  &-calendar:before {content: "\F0ED"}
+  &-chevron-double-left:before {content: "\F13D"}
+  &-chevron-double-right:before {content: "\F13E"}
+  &-chevron-left:before {content: "\F141"}
+  &-chevron-right:before {content: "\F142"}
+  &-close:before {content: "\F156"}
+  &-contacts:before {content: "\F00E"}
+  &-database-search:before {content: "\F865"}
+  &-demo:before {content: "\F065"}
+  &-dots-horizontal:before {content: "\F1D8"}
+  &-emoticon-happy-outline:before {content: "\F1F5"}
+  &-fit-to-page-outline:before {content: "\FF13"}
+  &-flip-horizontal:before {content: "\F93B"}
+  &-flip-vertical:before {content: "\F93A"}
+  &-loading:before {content: "\F771"}
+  &-menu:before {content: "\F35C"}
+  &-minus-circle-outline:before {content: "\F377"}
+  &-numeric-0-circle-outline:before {content: "\FC7B"}
+  &-plus-circle-outline:before {content: "\F419"}
+  &-rabbit:before {content: "\F906"}
+  &-rotate-left:before {content: "\F465"}
+  &-rotate-right:before {content: "\F467"}
+  &-sort-ascending:before {content: "\F4BC"}
+  &-sort-descending:before {content: "\F4BD"}
+  &-sort:before {content: "\F4BA"}
+  &-tune:before {content: "\F62E"}
+  &-view-grid:before {content: "\F570"}
+  &-view-parallel:before {content: "\F727"}
+  &-view-sequential:before {content: "\F728"}
+  &-window-close:before {content: "\F5AD"}
+}
+
+.icon--size {
+  @each $i, $j in (
+    small: 18px,
+    medium: 24px,
+    large: 36px,
+  ) {
+    &-#{$i}:before {
+      font-size: $j;
+      width: $j;
+      height: $j;
+      line-height: $j;
+    }
+  }
+
+  @for $i from 2 through 10 {
+    &-#{$i}x:before {
+      $size: 24 * $i + px;
+      font-size: $size;
+      width: $size;
+      height: $size;
+      line-height: $size;
+    }
+  }
+}

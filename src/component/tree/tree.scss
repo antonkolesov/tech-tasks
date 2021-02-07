@@ -1,0 +1,55 @@
+.tree {
+  overflow: auto;
+  padding: 4px 2px;
+}
+
+.tree__item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 3px 10px 3px 0;
+  user-select: none;
+  white-space: nowrap;
+
+  &>* {
+    pointer-events: none;
+  }
+
+  &--active {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  &:hover {
+    color: $dark;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.tree__indent {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 auto;
+}
+
+.tree__icon {
+  font: normal 1.0 24px IconFont;
+  width: 24px;
+  height: 24px;
+  margin: 0 3px;
+
+  &--none:before {
+    content: "\FA14";
+  }
+
+  &--collapsed:before {
+    content: "\F35F";
+  }
+
+  &--expanded:before {
+    content: "\F35D";
+  }
+}

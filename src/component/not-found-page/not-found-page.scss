@@ -1,0 +1,28 @@
+.not-found-page {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.not-found-page__code {
+  color: $blue;
+  font-size: 120px;
+  font-weight: bold;
+}
+
+.not-found-page__text {
+  font-size: 28px;
+}
+
+.not-found-page__button {
+  margin-top: 18px;
+}
+
+.theme {
+  @each $i, $j in $themes {
+    &--#{$i} .not-found-page__code {
+      color: $j;
+    }
+  }
+}

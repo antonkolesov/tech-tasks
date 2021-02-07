@@ -1,0 +1,55 @@
+.avatar {
+  align-items: center;
+  background-color: $blue;
+  background-position: 50% 4px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-radius: 200px;
+  color: $light;
+  display: flex;
+  font-size: 25px;
+  height: 50px;
+  justify-content: center;
+  width: 50px;
+}
+
+.avatar--active {
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.133) 0px 3.2px 7.2px 0px, rgba(0, 0, 0, 0.11) 0px 0.6px 1.8px 0px;
+    opacity: 0.9;
+  }
+
+  &:active {
+    opacity: 1.0;
+  }
+}
+
+.avatar--light {
+  background: $light;
+  color: $darkFont;
+}
+
+.avatar--size {
+  @each $i, $j, $k, $l in (
+    small 40px 3px 16px,
+    medium 50px 4px 25px,
+    large 140px 8px 70px
+  ) {
+    &-#{$i} {
+      width: $j;
+      height: $j;
+      background-position: 50% $k;
+      font-size: $l
+    }
+  }
+}
+
+.theme {
+  @each $i, $j in $themes {
+    &--#{$i} .avatar {
+      background-color: $j;
+    }
+  }
+}
